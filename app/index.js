@@ -1,12 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 // var App = require('./components/App');
-function Person(){
+function Person(props){
     return (
         <div className="person">
-        <h1>Larry</h1>
-        <p>Your Age: 29</p>
+        <h1>{props.name}</h1>
+        <p>Your Age: {props.age}</p>
     </div>
 );
 }
-ReactDOM.render(<Person/>,document.querySelector('#p1'));
+var app =(
+    <div>
+    <Person name="Larry" age="29"/>
+    <Person name="Max" age="28"/>
+    </div>
+);
+ReactDOM.render(app,document.querySelector('#app'));

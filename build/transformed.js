@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n// var App = require('./components/App');\nfunction Person() {\n    return React.createElement(\n        'div',\n        { className: 'person' },\n        React.createElement(\n            'h1',\n            null,\n            'Larry'\n        ),\n        React.createElement(\n            'p',\n            null,\n            'Your Age: 29'\n        )\n    );\n}\nReactDOM.render(React.createElement(Person, null), document.querySelector('#p1'));\n\n//# sourceURL=webpack:///./app/index.js?");
+eval("var React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n// var App = require('./components/App');\nfunction Person(props) {\n    return React.createElement(\n        'div',\n        { className: 'person' },\n        React.createElement(\n            'h1',\n            null,\n            props.name\n        ),\n        React.createElement(\n            'p',\n            null,\n            'Your Age: ',\n            props.age\n        )\n    );\n}\nvar app = React.createElement(\n    'div',\n    null,\n    React.createElement(Person, { name: 'Larry', age: '29' }),\n    React.createElement(Person, { name: 'Max', age: '28' })\n);\nReactDOM.render(app, document.querySelector('#app'));\n\n//# sourceURL=webpack:///./app/index.js?");
 
 /***/ }),
 
